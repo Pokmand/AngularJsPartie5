@@ -16,42 +16,42 @@
 </head>
 
 <body ng-app="formApp">
-  <form name="myForm" class="" action="index.html" method="post" novalidate ="true">
-    <h1 class="text-info text-center mt-5 pb-5">Formulaire Topics & Comments :</h1>
+  <h1 class="text-primary text-center">Formulaire Topics & Comments : </h1>
+  <form name="myForm" class="border border-primary m-3 p-2" action="index.html" method="post" novalidate="true">
     <ul>
       <li><label for="Name">Votre Nom :</label>
-        <input type="text" name="Name" placeholder="DUPONT" id="Name" required ng-minlength="2" ng-maxlength="30" ng-model = "Name"/>
+        <input type="text" name="Name" placeholder="DUPONT" id="Name" required ng-minlength="2" ng-maxlength="30" ng-model="Name" />
         <div ng-messages="myForm.Name.$error" role="alert">
-          <div  class = "text-danger" ng-message="required" ng-if = "myForm.Name.$valid.focus">Votre nom est obligatoire</div>
-          <div class = "text-warning" ng-message="minlength">Veuillez entrer un nom plus long</div>
-          <div class = "text-warning" ng-message="maxlenghth">Veuillez entrer un nom plus court</div>
+          <div class="text-danger" ng-message="required" ng-hide="myForm.Name.$pristine">Votre nom est obligatoire</div>
+          <div class="text-warning" ng-message="minlength">Veuillez entrer un nom plus long</div>
+          <div class="text-warning" ng-message="maxlenghth">Veuillez entrer un nom plus court</div>
         </div>
       </li>
 
       <li><label for="Email">Votre Email : </label>
-        <input type="email" name="email" placeholder="olivierdupont@gmail.com" id="email" ng-model = "email" required />
+        <input type="email" name="email" placeholder="olivierdupont@gmail.com" id="email" ng-model="email" required />
         <div ng-messages="myForm.email.$error" role="alert">
-          <div  class = "text-danger" ng-message="required" ng-if = "myForm.Name.$valid.focus">Votre email est obligatoire</div>
-          <div class = "text-warning" ng-message="email text-warning">E-mail non valide</div>
+          <div class="text-danger" ng-message="required" ng-hide="myForm.Name.$pristine">Votre email est obligatoire</div>
+          <div class="text-warning" ng-message="email text-warning">E-mail non valide</div>
         </div>
       </li>
 
       <li><label for="topic">Votre sujet :</label>
-        <input type="text" name="topic" value="" id="topic" ng-model = "topic" required />
+        <input type="text" name="topic" value="" id="topic" ng-model="topic" required />
         <div ng-messages="myForm.topic.$error" role="alert">
-          <div class = "text-danger" ng-message="required" ng-if = "myForm.Name.$valid.focus">La description du sujet est obligatoire</div>
-          <div  class = "text-warning"ng-message="minlength text-warning">Veuillez entrer un nom plus long</div>
-          <div  class = "text-warning" ng-message="maxlenghth text-warning">Veuillez entrer un nom plus court</div>
+          <div class="text-danger" ng-message="required" ng-hide="myForm.Name.$pristine">La description du sujet est obligatoire</div>
+          <div class="text-warning" ng-message="minlength text-warning">Veuillez entrer un nom plus long</div>
+          <div class="text-warning" ng-message="maxlenghth text-warning">Veuillez entrer un nom plus court</div>
       </li>
 
       <li><label for="text"> Description du sujet : </label>
-        <textarea name="textarea" rows="2" cols="20" required ng-minlength="1" ng-maxlength="250" ng-model = "textarea" ></textarea></li>
+        <textarea name="textarea" rows="2" cols="20" required ng-minlength="1" ng-maxlength="250" ng-model="textarea"></textarea></li>
       <div ng-messages="myForm.textarea.$error" role="alert">
-        <div class = "text-danger" ng-message="required" ng-if = "myForm.Name.$valid.focus">La description est obligatoire</div>
-        <div class = "text-warning" ng-message="minlength">Veuillez entrer un texte plus long</div>
-        <div  class = "text-warning"ng-message="maxlenghth">Veuillez entrer un texte plus court</div>
+        <div class="text-danger" ng-message="required" ng-hide="myForm.Name.$pristine">La description est obligatoire</div>
+        <div class="text-warning" ng-message="minlength">Veuillez entrer un texte plus long</div>
+        <div class="text-warning" ng-message="maxlenghth">Veuillez entrer un texte plus court</div>
     </ul>
-    <input type="button" name="Submit" value="Envoyer">
+    <input class="bg-warning align-center" type="button" name="Submit" value="Envoyer">
   </form>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
