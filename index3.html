@@ -3,28 +3,55 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Fomulaire d'inscription : </title>
+  <title>Fomulaire d'inscription en ngMessages! </title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
-  <script src="script2.js">
+  <script src="https://code.angularjs.org/1.7.8/angular-messages.js"></script>
+  <script src="script3.js">
   </script>
 </head>
 
-<body ng-app='formApp'>
-  <form class="text-center" action="index.html" method="post" ng-controller='formController'>
-    <h1 class="primary">Formulaire d'inscription :</h1>
+<body ng-app="formApp">
+  <form name="myForm" class="" action="index.html" method="post" novalidate ="true">
+    <h1 class="text-info text-center mt-5 pb-5">Formulaire Topics & Comments :</h1>
     <ul>
-      <li><label for="Name"></label>Votre Nom : <input type="text" name="Name" placeholder="DUPONT" id="Name" ng-pattern = "regexName"></li>
-      <li><label for="Email">Votre Email : </label><input type="email" name="email" placeholder="olivierdupont@gmail.com" id="email"></li>
-      <li><label for="topic">Votre sujet : </label><input type="text" name="topic" value="" id="topic"></li>
-      <li><label for="text"> Description du sujet : </label> <textarea name="textarea" rows="2" cols="20"></textarea></li>
-      <input type="button" name="Submit" value="Envoyer">
+      <li><label for="Name">Votre Nom :</label>
+        <input type="text" name="Name" placeholder="DUPONT" id="Name" required ng-minlength="2" ng-maxlength="30" ng-model = "Name"/>
+        <div ng-messages="myForm.Name.$error" role="alert">
+          <div  class = "text-danger" ng-message="required" ng-if = "myForm.Name.$valid.focus">Votre nom est obligatoire</div>
+          <div class = "text-warning" ng-message="minlength">Veuillez entrer un nom plus long</div>
+          <div class = "text-warning" ng-message="maxlenghth">Veuillez entrer un nom plus court</div>
+        </div>
+      </li>
+
+      <li><label for="Email">Votre Email : </label>
+        <input type="email" name="email" placeholder="olivierdupont@gmail.com" id="email" ng-model = "email" required />
+        <div ng-messages="myForm.email.$error" role="alert">
+          <div  class = "text-danger" ng-message="required" ng-if = "myForm.Name.$valid.focus">Votre email est obligatoire</div>
+          <div class = "text-warning" ng-message="email text-warning">E-mail non valide</div>
+        </div>
+      </li>
+
+      <li><label for="topic">Votre sujet :</label>
+        <input type="text" name="topic" value="" id="topic" ng-model = "topic" required />
+        <div ng-messages="myForm.topic.$error" role="alert">
+          <div class = "text-danger" ng-message="required" ng-if = "myForm.Name.$valid.focus">La description du sujet est obligatoire</div>
+          <div  class = "text-warning"ng-message="minlength text-warning">Veuillez entrer un nom plus long</div>
+          <div  class = "text-warning" ng-message="maxlenghth text-warning">Veuillez entrer un nom plus court</div>
+      </li>
+
+      <li><label for="text"> Description du sujet : </label>
+        <textarea name="textarea" rows="2" cols="20" required ng-minlength="1" ng-maxlength="250" ng-model = "textarea" ></textarea></li>
+      <div ng-messages="myForm.textarea.$error" role="alert">
+        <div class = "text-danger" ng-message="required" ng-if = "myForm.Name.$valid.focus">La description est obligatoire</div>
+        <div class = "text-warning" ng-message="minlength">Veuillez entrer un texte plus long</div>
+        <div  class = "text-warning"ng-message="maxlenghth">Veuillez entrer un texte plus court</div>
     </ul>
+    <input type="button" name="Submit" value="Envoyer">
   </form>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
