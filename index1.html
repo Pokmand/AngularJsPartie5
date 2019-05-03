@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Exercice div formulaire</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -34,9 +34,22 @@
     Email: <input type="email" name="input" ng-model="userType" required>
     <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
   </form>
-  <div class="bg-danger" ng-controller="divController">
+  <div ng-controller="divController" ng-class="colordiv">
     <p></p>Pour respecter complètement la consigne de l'exercice
   </div>
+  <!--<form ng-controller="mailCtrl" name="myForm">
+      <label for="inputMail"> veuillez entrer votre e-mail</label><input id="inputMail" name="myInput" ng-model="mail"  type="email" required />
+      <div class="squareFalse" ng-show="myForm.myInput.$error.email"></div>
+      <div class="squareTrue" ng-show="myForm.myInput.$valid"></div>
+      <div ng-class="{green: myForm.myInput.$valid, red: myForm.myInput.$error.email}">
+
+      </div>
+      <p>pattern error : {{myForm.myInput.$error.pattern}}</p>
+        <p>mail error : {{myForm.myInput.$error.email}}</p>
+      <p>valid : {{myForm.myInput.$valid}}</p>
+  </form> -->
+
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
