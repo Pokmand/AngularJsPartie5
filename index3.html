@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Fomulaire d'inscription : </title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
+  <script src="script2.js">
+  </script>
+</head>
+
+<body ng-app='formApp'>
+  <form class="text-center" action="index.html" method="post" ng-controller='formController'>
+    <h1 class="primary">Formulaire d'inscription :</h1>
+    <ul>
+      <li><label for="Name"></label>Votre Nom : <input type="text" name="Name" placeholder="DUPONT" id="Name" ng-pattern = "regexName"></li>
+      <li><label for="Email">Votre Email : </label><input type="email" name="email" placeholder="olivierdupont@gmail.com" id="email"></li>
+      <li><label for="topic">Votre sujet : </label><input type="text" name="topic" value="" id="topic"></li>
+      <li><label for="text"> Description du sujet : </label> <textarea name="textarea" rows="2" cols="20"></textarea></li>
+      <input type="button" name="Submit" value="Envoyer">
+    </ul>
+  </form>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
+<!--Exercice 3
+Faire un formulaire avec les champs nom, e-mail, sujet et texte. Le champ texte doit être un textarea. Chaque champ doit avoir son propre message d'erreur si la saisie est incorrecte.
+Suite:
+Ajouter un bouton envoyer. Au clic ajouter en dessous du formulaire le sujet du mail. Au clic sur un sujet afficher une autre vue avec les autres données saisies (nom, email, sujet et texte).-->
