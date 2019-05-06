@@ -49,10 +49,10 @@
         <div class="text-warning" ng-message="minlength">Veuillez entrer un texte plus long</div>
         <div class="text-warning" ng-message="maxlength">Veuillez entrer un texte plus court</div>
     </ul>
-    <button class="bg-warning align-center" type="button" name="Submit" value="Envoyer" ng-click=showfunction() ng-disabled="myForm.$invalid">Envoyer</button>
+    <button class="bg-warning align-center" type="button" name="Submit" value="Envoyer" ng-click='showfunction()' ng-disabled="myForm.$invalid">Envoyer</button>
   </form>
   <div class="bg-primary">
-    <p>{userarray}</p>
+    <p>{{userarray}}</p>
   </div>
 
   <!-- Optional JavaScript -->
