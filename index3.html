@@ -52,8 +52,12 @@
     <button class="bg-warning align-center" type="button" name="Submit" value="Envoyer" ng-click='showfunction()' ng-disabled="myForm.$invalid">Envoyer</button>
   </form>
   <div class="bg-primary">
-    <p>{{userarray}}</p>
-  </div>
+      <ul>
+      <li ng-repeat= "element in userarray">
+        <p>{{element.topic}}</p>
+      </li>
+    </ul>
+    </div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
