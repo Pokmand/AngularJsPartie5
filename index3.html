@@ -11,61 +11,60 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
   <script src="https://code.angularjs.org/1.7.8/angular-messages.js"></script>
+  <script src="https://code.angularjs.org/1.7.8/angular-route.min.js"></script>
+
 </head>
 
 <body ng-app='formApp' ng-controller='formCtrl'>
-  <h1 class="text-primary text-center">Formulaire Topics & Comments : </h1>
-  <form name="myForm" class="border border-primary m-3 p-2" action="index.html" method="post" novalidate="true">
-    <ul>
-      <li><label for="Name">Votre Nom :</label>
-        <input type="text" name="Name" placeholder="DUPONT" id="Name" required ng-minlength="2" ng-maxlength="30" ng-model="Name" />
-        <div ng-messages="myForm.Name.$error" role="alert" ng-model="Name">
-          <div class="text-danger" ng-message="required" ng-if="myForm.Name.$touched">Votre nom est obligatoire</div>
-          <div class="text-warning" ng-message="minlength">Veuillez entrer un nom plus long</div>
-          <div class="text-warning" ng-message="maxlenghth">Veuillez entrer un nom plus court</div>
-        </div>
-      </li>
-
-      <li><label for="Email">Votre Email : </label>
-        <input type="email" name="email" placeholder="olivierdupont@gmail.com" id="email" ng-model="email" required />
-        <div ng-messages="myForm.email.$error" role="alert" ng-model="email">
-          <div class="text-danger" ng-message="required" ng-if="myForm.email.$touched">Votre email est obligatoire</div>
-          <div class="text-warning" ng-message="email text-warning">E-mail non valide</div>
-        </div>
-      </li>
-
-      <li><label for="topic">Votre sujet :</label>
-        <input type="text" name="topic" value="" id="topic" ng-model="topic" required ng-minlength="1" ng-maxlength="25"/>
-        <div ng-messages="myForm.topic.$error" role="alert" ng-model="topic">
-          <div class="text-danger" ng-message="required" ng-if="myForm.topic.$touched">La description du sujet est obligatoire</div>
-          <div class="text-warning" ng-message="minlength text-warning">Veuillez entrer votre Nom complet</div>
-          <div class="text-warning" ng-message="maxlength text-warning">Vous avez dépassé la limite de caractères autorisés</div>
-      </li>
-
-      <li><label for="text"> Description du sujet : </label>
-        <textarea name="textarea" rows="2" cols="20" required ng-minlength="1" ng-maxlength="250" ng-model="textarea"></textarea></li>
-      <div ng-messages="myForm.textarea.$error" role="alert">
-        <div class="text-danger" ng-message="required" ng-if="myForm.textarea.$touched">La description est obligatoire</div>
-        <div class="text-warning" ng-message="minlength">Veuillez entrer un texte plus long</div>
-        <div class="text-warning" ng-message="maxlength">Veuillez entrer un texte plus court</div>
-    </ul>
-    <button class="bg-warning align-center" type="button" name="Submit" value="Envoyer" ng-click='showfunction()' ng-disabled="myForm.$invalid">Envoyer</button>
-  </form>
-  <div class="bg-primary">
+  <section class="index0">
+    <h1 class="text-primary text-center">Formulaire Topics & Comments : </h1>
+    <form name="myForm" class="border border-primary m-3 p-2" action="index.html" method="post" novalidate="true">
       <ul>
-      <li ng-repeat= "element in userarray">
-        <p>{{element.topic}}</p>
-      </li>
-    </ul>
-    </div>
+        <li><label for="Name">Votre Nom :</label>
+          <input type="text" name="Name" placeholder="DUPONT" id="Name" required ng-minlength="2" ng-maxlength="30" ng-model="Name" />
+          <div ng-messages="myForm.Name.$error" role="alert" ng-model="Name">
+            <div class="text-danger" ng-message="required" ng-if="myForm.Name.$touched">Votre nom est obligatoire</div>
+            <div class="text-warning" ng-message="minlength">Veuillez entrer un nom plus long</div>
+            <div class="text-warning" ng-message="maxlenghth">Veuillez entrer un nom plus court</div>
+          </div>
+        </li>
 
+        <li><label for="Email">Votre Email : </label>
+          <input type="email" name="email" placeholder="olivierdupont@gmail.com" id="email" ng-model="email" required />
+          <div ng-messages="myForm.email.$error" role="alert" ng-model="email">
+            <div class="text-danger" ng-message="required" ng-if="myForm.email.$touched">Votre email est obligatoire</div>
+            <div class="text-warning" ng-message="email text-warning">E-mail non valide</div>
+          </div>
+        </li>
+
+        <li><label for="topic">Votre sujet :</label>
+          <input type="text" name="topic" value="" id="topic" ng-model="topic" required ng-minlength="1" ng-maxlength="25" />
+          <div ng-messages="myForm.topic.$error" role="alert" ng-model="topic">
+            <div class="text-danger" ng-message="required" ng-if="myForm.topic.$touched">La description du sujet est obligatoire</div>
+            <div class="text-warning" ng-message="minlength text-warning">Veuillez entrer votre Nom complet</div>
+            <div class="text-warning" ng-message="maxlength text-warning">Vous avez dépassé la limite de caractères autorisés</div>
+        </li>
+
+        <li><label for="text"> Description du sujet : </label>
+          <textarea name="textarea" rows="2" cols="20" required ng-minlength="1" ng-maxlength="250" ng-model="textarea"></textarea></li>
+        <div ng-messages="myForm.textarea.$error" role="alert">
+          <div class="text-danger" ng-message="required" ng-if="myForm.textarea.$touched">La description est obligatoire</div>
+          <div class="text-warning" ng-message="minlength">Veuillez entrer un texte plus long</div>
+          <div class="text-warning" ng-message="maxlength">Veuillez entrer un texte plus court</div>
+      </ul>
+      <button class="bg-warning align-center" type="button" name="Submit" value="Envoyer" ng-click='showfunction()' ng-disabled="myForm.$invalid">Envoyer</button>
+    </form>
+    <div class="bg-warning">
+      <li ng-repeat="element in userarray"> <a href='file:///home/manu/Documents/website/angularJS/Exercices-AngularJs-Partie-5/index0.html'>{{element.topic}} - {{$index}}</a></li>
+    </div>
+  </section>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="script3.js"></script>
-  </body>
+</body>
 
 </html>
 <!--Exercice 3
